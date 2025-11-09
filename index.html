@@ -396,11 +396,6 @@
             backdrop-filter: blur(10px);
         }
         
-        .education-card:hover {
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            border-color: rgba(108, 99, 255, 0.3);
-        }
-        
         .education-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
@@ -423,11 +418,6 @@
             height: 100%;
         }
         
-        .skill-item:hover {
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            border-color: rgba(108, 99, 255, 0.3);
-        }
-        
         .skill-icon {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
@@ -447,34 +437,69 @@
         }
         
         /* Projects Section - Updated */
-        .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+        .project-card1 {
+            border-radius: 20px;
             position: relative;
             height: 350px;
             display: flex;
             flex-direction: column;
+            background: linear-gradient(rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 5)), url('agro.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
         }
-        
-        .project-card:hover {
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            border-color: rgba(108, 99, 255, 0.3);
+
+        .project-card2 {
+            border-radius: 20px;
+            position: relative;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 5)), url('sjcont.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
         }
-        
-        .project-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-            opacity: 0.1;
-            transition: opacity 0.1s ease;
+
+        .project-card3 {
+            border-radius: 20px;
+            position: relative;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 5)), url('billing.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .project-card4 {
+            border-radius: 20px;
+            position: relative;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 5)), url('examport.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .project-card5 {
+            border-radius: 20px;
+            position: relative;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 5)), url('elitekicks.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
         }
         
         .project-body {
@@ -488,7 +513,7 @@
         }
         
         .tech-badge {
-            background: rgba(5, 0, 151, 0.313);
+            background: rgba(5, 0, 151, 0.483);
             color: var(--text);
             padding: 5px 10px;
             border-radius: 20px;
@@ -508,6 +533,10 @@
         .certificates-track {
             display: flex;
             animation: scroll 30s linear infinite;
+        }
+
+        .certificates-track:hover {
+            animation-play-state: paused;
         }
         
         .certificate-card {
@@ -706,23 +735,11 @@
             textarea.form-control {
                 height: 100px;
             }
-            .project-card {
-                background: rgba(255, 255, 255, 0.05);
-                border-radius: 10px;
-                overflow: hidden;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(10px);
-                position: relative;
-                height: auto;
-                display: flex;
-                flex-direction: column;
-            }
 
             .skill-item {
                 background: rgba(255, 255, 255, 0.05);
                 border-radius: 10px;
-                padding: 0.1rem;
+                padding: 0.9rem;
                 text-align: center;
                 transition: all 0.3s ease;
                 border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1100,7 +1117,7 @@
                         <div class="skill-icon" style="color: #217346;">
                             <i class="fas fa-file-excel"></i>
                         </div>
-                        <h5>Adv. Excel</h5>
+                        <h5>Advanced Excel</h5>
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" style="width: 85%; background-color: #217346;"></div>
                         </div>
@@ -1117,13 +1134,12 @@
             <h2 class="section-title">My Projects</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <img src="agro.jpg" class="project-img" alt="AGRO Website">
+                    <div class="project-card1">
                         <div class="project-body">
                             <h5>AGRO WEBSITE</h5>
                             <div class="mb-3">
                                 <span class="tech-badge">HTML5</span>
-                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">CSS3</span>
                                 <span class="tech-badge">Bootstrap</span>
                             </div>
                             <p class="mb-3">The AGRO website features a clean, responsive layout to showcase agricultural themes and content. It includes sections like Home, About, Gallery, Blog, and Contact, each styled for visual consistency.</p>
@@ -1136,13 +1152,12 @@
                 </div>
 
                 <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <img src="sjcont.jpg" class="project-img" alt="SJ CONTRACTS">
+                    <div class="project-card2">
                         <div class="project-body">
                             <h5>SJ CONTRACTS</h5>
                             <div class="mb-3">
-                                <span class="tech-badge">HTML</span>
-                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
                                 <span class="tech-badge">Bootstrap</span>
                             </div>
                             <p class="mb-3">SJ Construction is a responsive website built using HTML, CSS, and Bootstrap. It includes sections like Home, About, Portfolio, and Contact. The design is clean and easy to navigate.</p>
@@ -1155,13 +1170,12 @@
                 </div>
 
                 <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <img src="billing.jpg" class="project-img" alt="BILLING SOFTWARE">
+                    <div class="project-card3">
                         <div class="project-body">
                             <h5>BILLING SOFTWARE</h5>
                             <div class="mb-2">
-                                <span class="tech-badge">HTML</span>
-                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
                                 <span class="tech-badge">Bootstrap</span>
                                 <span class="tech-badge">JavaScript</span>
                                 <span class="tech-badge">jQuery</span>
@@ -1176,20 +1190,19 @@
                 </div>
 
                 <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <img src="examport.jpg" class="project-img" alt="Exam Portal">
+                    <div class="project-card4">
                         <div class="project-body">
                             <h5>QUIZ APPLICATION</h5>
                             <div class="mb-3">
                                 <span class="tech-badge">HTML5</span>
-                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">CSS3</span>
                                 <span class="tech-badge">Bootstrap</span>
                                 <span class="tech-badge">JavaScript</span>
                                 <span class="tech-badge">JSON</span>
                                 <span class="tech-badge">jQuery</span>
                                 <span class="tech-badge">React JS</span>
                             </div>
-                            <p class="mb-3">This is a sleek, web-based quiz application built with React.js and modern frontend technologies. It offers a smooth, responsive interface for users to take quizzes online.</p>
+                            <p class="mb-3">Quiz Application is a modern, web-based platform built with React.js for taking quizzes online. It features a clean, responsive UI and smooth performance across all devices.</p>
                             <div class="d-flex justify-content-between">
                                 <a href="https://github.com/sarthakjoshi20/quizapp" target="_blank" class="btn btn-primary btn-sm">View Code</a>
                                 <a href="https://sarthakjoshi20.github.io/quizapp/" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
@@ -1199,13 +1212,12 @@
                 </div>
 
                 <div class="col-md-4 mb-4">
-                    <div class="project-card">
-                        <img src="elitekicks.jpg" class="project-img" alt="ELITEKICKS Ecommerce">
+                    <div class="project-card5">
                         <div class="project-body">
                             <h5>ELITEKICKS</h5>
                             <div class="mb-3">
                                 <span class="tech-badge">HTML5</span>
-                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">CSS3</span>
                                 <span class="tech-badge">Bootstrap</span>
                                 <span class="tech-badge">JavaScript</span>
                                 <span class="tech-badge">AJAX</span>
