@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarthak Joshi</title>
+    <link rel="icon" type="image/x-icon" href="favicontitle.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --secondary: #4a44c9;
+            --accent: #ff6584;
+            --dark: #0f0f23;
+            --darker: #0a0a18;
+            --text: #e2e2e2;
+            --text-light: #a0a0c0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--darker);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 70px; /* Add padding to body to account for fixed navbar */
+        }
+        
+        /* Nebulae Background */
+        .nebulae-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(125deg, var(--darker) 0%, #1a1a3e 50%, var(--dark) 100%);
+            overflow: hidden;
+        }
+        
+        .nebulae-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(108, 99, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 101, 132, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(74, 68, 201, 0.1) 0%, transparent 50%);
+            animation: nebulaeMove 20s ease-in-out infinite;
+        }
+        
+        @keyframes nebulaeMove {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.05) rotate(1deg); }
+        }
+        
+        /* Navbar - Fixed with proper z-index */
+        .navbar {
+            background-color: rgba(15, 15, 35, 0.95) !important;
+            backdrop-filter: blur(10px);
+            /* border-bottom: 1px solid rgba(108, 99, 255, 0.2); */
+            padding: 0.6rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1030; /* High z-index to ensure navbar stays on top */
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 600;
+            color: var(--text) !important;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand img {
+            height: 35px;
+            margin-right: 10px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            margin: 0 2px;
+            padding: 8px 15px !important;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--text) !important;
+            background-color: rgba(108, 99, 255, 0.1);
+        }
+        
+        /* Hero Section - Adjusted padding for fixed navbar */
+        .hero {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 100px 0 60px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+
+        /* Star Animation Background */
+        .stars-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        .star:nth-child(1) { top: 20%; left: 10%; width: 2px; height: 2px; animation-delay: 0s; }
+        .star:nth-child(2) { top: 60%; left: 15%; width: 3px; height: 3px; animation-delay: 0.5s; }
+        .star:nth-child(3) { top: 40%; left: 25%; width: 2px; height: 2px; animation-delay: 1s; }
+        .star:nth-child(4) { top: 85%; left: 15%; width: 4px; height: 4px; animation-delay: 1.5s; }
+        .star:nth-child(5) { top: 30%; left: 40%; width: 2px; height: 2px; animation-delay: 2s; }
+        .star:nth-child(6) { top: 70%; left: 50%; width: 3px; height: 3px; animation-delay: 0.7s; }
+        .star:nth-child(7) { top: 50%; left: 60%; width: 2px; height: 2px; animation-delay: 1.2s; }
+        .star:nth-child(8) { top: 25%; left: 70%; width: 4px; height: 4px; animation-delay: 1.8s; }
+        .star:nth-child(9) { top: 65%; left: 80%; width: 2px; height: 2px; animation-delay: 0.3s; }
+        .star:nth-child(10) { top: 65%; left: 90%; width: 3px; height: 3px; animation-delay: 2.2s; }
+
+        .star:nth-child(11) { top: 15%; left: 25%; width: 2px; height: 2px; animation-delay: 0s; }
+        .star:nth-child(12) { top: 52%; left: 35%; width: 3px; height: 3px; animation-delay: 0.5s; }
+        .star:nth-child(13) { top: 15%; left: 55%; width: 2px; height: 2px; animation-delay: 1s; }
+        .star:nth-child(14) { top: 92%; left: 39%; width: 4px; height: 4px; animation-delay: 1.5s; }
+        .star:nth-child(15) { top: 57%; left: 55%; width: 2px; height: 2px; animation-delay: 2s; }
+        .star:nth-child(16) { top: 97%; left: 65%; width: 3px; height: 3px; animation-delay: 0.7s; }
+        .star:nth-child(17) { top: 71%; left: 63%; width: 2px; height: 2px; animation-delay: 1.2s; }
+        .star:nth-child(18) { top: 42%; left: 85%; width: 4px; height: 4px; animation-delay: 1.8s; }
+        .star:nth-child(19) { top: 88%; left: 95%; width: 2px; height: 2px; animation-delay: 0.3s; }
+        .star:nth-child(20) { top: 15%; left: 85%; width: 3px; height: 3px; animation-delay: 2.2s; }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Floating Particles Animation */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .particle:nth-child(1) { top: 15%; left: 10%; width: 8px; height: 8px; animation-delay: 0s; }
+        .particle:nth-child(2) { top: 55%; left: 60%; width: 12px; height: 12px; animation-delay: 1s; }
+        .particle:nth-child(3) { top: 25%; left: 60%; width: 6px; height: 6px; animation-delay: 2s; }
+        .particle:nth-child(4) { top: 30%; left: 35%; width: 10px; height: 10px; animation-delay: 3s; }
+        .particle:nth-child(5) { top: 50%; left: 10%; width: 8px; height: 8px; animation-delay: 4s; }
+
+        .particle:nth-child(6) { top: 50%; left: 80%; width: 8px; height: 8px; animation-delay: 0s; }
+        .particle:nth-child(7) { top: 90%; left: 40%; width: 12px; height: 12px; animation-delay: 1s; }
+        .particle:nth-child(8) { top: 15%; left: 90%; width: 6px; height: 6px; animation-delay: 2s; }
+        .particle:nth-child(9) { top: 75%; left: 15%; width: 10px; height: 10px; animation-delay: 3s; }
+        .particle:nth-child(10) { top: 90%; left: 90%; width: 8px; height: 8px; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-20px) translateX(10px); }
+            50% { transform: translateY(-10px) translateX(20px); }
+            75% { transform: translateY(-15px) translateX(-10px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .typewriter {
+            display: inline-block;
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: var(--accent);
+            margin-left: 2px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            margin: 0 8px;
+            color: var(--text);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+        }
+
+        .social-icons a:nth-child(5) {
+            color: #E1306C;
+        }
+
+        .social-icons a:nth-child(5):hover {
+            color: white;
+        }
+    
+        .social-icons a:nth-child(4) {
+            color: #25D366;
+        }
+
+        .social-icons a:nth-child(4):hover {
+            color: white;
+        }
+
+        .social-icons a:nth-child(3) {
+            color: #D44638;
+        }
+
+        .social-icons a:nth-child(3):hover {
+            color: white;
+        }
+
+        .social-icons a:nth-child(2) {
+            color: #985eee;
+        }
+
+        .social-icons a:nth-child(2):hover {
+            color: white;
+        }
+
+        .social-icons a:nth-child(1) {
+            color: #2e80eb;
+            margin-left: -4px;
+        }
+
+        .social-icons a:nth-child(1):hover {
+            color: white;
+        }
+
+        /* Section Styling */
+        section {
+            position: relative;
+            padding: 12px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-img {
+            width: 100%;
+            max-width: 300px;
+            position: relative;
+            border-bottom: 15px solid transparent;
+            border-image: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 10px 10px 50% 50%;
+        }
+        
+        .about-content {
+            padding-left: 2rem;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+        }
+        
+        .btn-outline-primary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+        }
+        
+        /* Education Section */
+        .education-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 0.5rem 1.5rem;
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .education-card:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border-color: rgba(108, 99, 255, 0.3);
+        }
+        
+        .education-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* .education-details p{
+            margin-bottom: 4px;
+        } */
+        
+        /* Skills Section */
+        .skill-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            height: 100%;
+        }
+        
+        .skill-item:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(108, 99, 255, 0.3);
+        }
+        
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress {
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            border-radius: 5px;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        /* Projects Section - Updated */
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border-color: rgba(108, 99, 255, 0.3);
+        }
+        
+        .project-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.1;
+            transition: opacity 0.1s ease;
+        }
+        
+        .project-body {
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .tech-badge {
+            background: rgba(5, 0, 151, 0.313);
+            color: var(--text);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        
+        /* Certificates Section */
+        .certificates-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        
+        .certificates-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+        
+        .certificate-card {
+            flex: 0 0 300px;
+            margin: 0 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .certificate-img {
+            height: 200px;
+        }
+        
+        .certificate-img img {
+            width: 100%;
+            height: 100%;
+            
+        }
+        
+        .certificate-body {
+            padding: 0.5rem;
+            text-align: center;
+            color: white;
+            font-weight: 500;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-300px * 7)); }
+        }
+        
+        /* Contact Section */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.022);
+            border-radius: 10px;
+            padding: 2rem 4rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-control {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text);
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .btn1{
+            border-radius: 8px;
+        }
+        
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+            color: var(--text);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            opacity: 1;
+        }
+
+        .form-control::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-control::-moz-placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            opacity: 1;
+        }
+
+        .form-control:-ms-input-placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-control:-moz-placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            opacity: 1;
+        }
+        
+        .contact-info {
+            padding-left: 2rem;
+        }
+        
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        
+        .contact-link {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding-top: 8px;
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+            
+            .about-content {
+                padding-left: 0;
+                margin-top: 2rem;
+            }
+            
+            .contact-info {
+                padding-left: 0;
+                margin-top: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px; /* Adjust for smaller navbar on mobile */
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .social-icons a {
+                width: 36px;
+                height: 36px;
+                font-size: 1.3rem;
+                margin: 0 4px;
+                align-items: center;
+            }
+
+            .social-icons a:nth-child(1){
+                margin-left: -4px;
+            }
+
+            .contact-form {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+                padding: 1rem;
+                backdrop-filter: blur(10px);
+            }
+            textarea.form-control {
+                height: 100px;
+            }
+            .project-card {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                position: relative;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .skill-item {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+                padding: 0.1rem;
+                text-align: center;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                height: 100%;
+            }
+            
+            .skill-icon {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .progress {
+                height: 12px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+                margin: 0.6rem 0.8rem;
+                overflow: hidden;
+            }
+            
+            .progress-bar {
+                border-radius: 10px;
+                transition: width 1.5s ease-in-out;
+            }
+
+             @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-300px * 9)); }
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 80px 0 50px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hhh {
+                margin-top: -50px;
+            }
+            br {
+                display: none;
+            }
+            section {
+                padding: 8px 0;
+            }
+        }
+        .navbar-toggler {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        .navbar-toggler:focus {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Nebulae Background -->
+    <div class="nebulae-bg"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="favicontitle.png" alt="Logo">
+                Sarthak Joshi
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+    <!-- Star Animation -->
+    <div class="stars-background">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+    
+    <!-- Floating Particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <div class="container">
+        <div class="hero-content fade-in">
+            <h1>Sarthak Joshi</h1>
+            <p class="typewriter">
+                <span id="type-text"></span><span class="cursor"></span>
+            </p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/sarthak-joshi-55a204344" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sarthakjoshi20/" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:sarthakjoshi1899@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/9322231899" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/_sarthak.joshi_" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- About Section -->
+    <section id="about" class="fade-in mb-4">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="jhighfh.png" alt="Sarthak Joshi" class="about-img">
+                </div>
+                <div class="col-md-8">
+                    <div class="about-content">
+                        <p class="about-text hhh">
+                            I'm Sarthak Joshi, a full-stack web developer with a strong passion for creating responsive, user-friendly, and high-performance web applications. I work with modern front-end technologies like HTML, CSS, Bootstrap, JavaScript, jQuery, and React.js, alongside back-end tools like Node.js, Express.js, and MySQL.
+                        </p>
+                        <p class="about-text">
+                            I enjoy building clean, interactive interfaces and developing robust APIs that ensure smooth functionality across devices. With a focus on performance, usability, and clean code, I aim to deliver scalable web solutions that solve real-world problems. I'm always exploring new technologies and refining my skills to stay current in the fast-paced world of web development.
+                        </p>
+                        <a href="#contact" class="btn btn-primary me-2">Contact Me</a>
+                        <a href="Sarthak Joshi2.pdf" target="_blank" class="btn btn-outline-primary text-white btn-sm">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">My Education</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Bachelor's Degree</h4>
+                        <div class="education-details">
+                            <p><strong>Savitribai Phule Pune University</strong></p>
+                            <p>B.B.A.(Computer Application)</p>
+                            <p>Year: 2022 - 2025</p>
+                            <p>CGPA: 8.19 &nbsp; Grade: +A</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h4>Higher Secondary</h4>
+                        <div class="education-details">
+                            <p><strong>Maharashtra State Board Pune</strong></p>
+                            <p>Stream: Commerce</p>
+                            <p>Year: March 2022</p>
+                            <p>Percentage: 60.17%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h4>Secondary School</h4>
+                        <div class="education-details">
+                            <p><strong>Maharashtra State Board Pune</strong></p>
+                            <p>Year: March 2020</p>
+                            <p>Percentage: 89%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="skill-item">
+                        <div class="skill-icon text-danger">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h5>HTML5</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 95%"></div>
+                        </div>
+                        <small>95%</small>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="skill-item">
+                        <div class="skill-icon text-primary">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h5>CSS3</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                        </div>
+                        <small>90%</small>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="skill-item">
+                        <div class="skill-icon text-warning">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <h5>JavaScript</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 85%"></div>
+                        </div>
+                        <small>85%</small>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="skill-item">
+                        <div class="skill-icon" style="color: #6f42c1;">
+                            <i class="fab fa-bootstrap"></i>
+                        </div>
+                        <h5>Bootstrap</h5>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 95%; background-color: #6f42c1;"></div>
+                        </div>
+                        <small>95%</small>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="skill-item">
+                        <div class="skill-icon text-info">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h5>React.js</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 70%"></div>
+                        </div>
+                        <small>70%</small>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="skill-item">
+                        <div class="skill-icon text-success">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h5>JSON</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 80%"></div>
+                        </div>
+                        <small>80%</small>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="skill-item">
+                        <div class="skill-icon" style="color: #0769AD;">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <h5>jQuery</h5>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%; background-color: #0769AD;"></div>
+                        </div>
+                        <small>85%</small>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="skill-item">
+                        <div class="skill-icon" style="color: #a60ccc;">
+                            <i class="fas fa-cloud-arrow-up"></i>
+                        </div>
+                        <h5>AJAX</h5>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 75%; background-color: #a60ccc;"></div>
+                        </div>
+                        <small>75%</small>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="skill-item">
+                        <div class="skill-icon" style="color: #07ad70;">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <h5>Node JS</h5>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%; background-color: #07ad70;"></div>
+                        </div>
+                        <small>80%</small>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="skill-item">
+                        <div class="skill-icon" style="color: #ff4231;">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h5>Express JS</h5>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%; background-color: #ff4231;"></div>
+                        </div>
+                        <small>85%</small>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="skill-item">
+                        <div class="skill-icon" style="color: #5b37f9;">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h5>MySQL</h5>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%; background-color: #5b37f9;"></div>
+                        </div>
+                        <small>90%</small>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="skill-item">
+                        <div class="skill-icon" style="color: #217346;">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <h5>Adv. Excel</h5>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%; background-color: #217346;"></div>
+                        </div>
+                        <small>85%</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section - Updated -->
+    <section id="projects" class="fade-in mt-3">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="agro.webp" class="project-img" alt="AGRO Website">
+                        <div class="project-body">
+                            <h5>AGRO WEBSITE</h5>
+                            <div class="mb-3">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+                            <p class="mb-3">The AGRO website features a clean, responsive layout to showcase agricultural themes and content. It includes sections like Home, About, Gallery, Blog, and Contact, each styled for visual consistency.</p>
+                            <div class="d-flex justify-content-between">
+                                <a href="https://github.com/sarthakjoshi20/agro" target="_blank" class="btn btn-primary btn-sm">View Code</a>
+                                <a href="https://sarthakjoshi20.github.io/agro/" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="sjcont.jpg" class="project-img" alt="SJ CONTRACTS">
+                        <div class="project-body">
+                            <h5>SJ CONTRACTS</h5>
+                            <div class="mb-3">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+                            <p class="mb-3">SJ Construction is a responsive website built using HTML, CSS, and Bootstrap. It includes sections like Home, About, Portfolio, and Contact. The design is clean and easy to navigate.</p>
+                            <div class="d-flex justify-content-between">
+                                <a href="https://github.com/sarthakjoshi20/sjconstruction" target="_blank" class="btn btn-primary btn-sm">View Code</a>
+                                <a href="https://sarthakjoshi20.github.io/sjconstruction/" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="billing.jpg" class="project-img" alt="BILLING SOFTWARE">
+                        <div class="project-body">
+                            <h5>BILLING SOFTWARE</h5>
+                            <div class="mb-2">
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">Bootstrap</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">jQuery</span>
+                            </div>
+                            <p class="mb-3">This Billing Software features a clean, user‑friendly interface for managing customer and invoice details. Users can input customer info, add multiple products with tax, discounts, and quantities.</p>
+                            <div class="d-flex justify-content-between">
+                                <a href="https://github.com/sarthakjoshi20/billingsoftware" target="_blank" class="btn btn-primary btn-sm">View Code</a>
+                                <a href="https://sarthakjoshi20.github.io/billingsoftware/" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="examport.jpg" class="project-img" alt="Exam Portal">
+                        <div class="project-body">
+                            <h5>QUIZ APPLICATION</h5>
+                            <div class="mb-3">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">Bootstrap</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">JSON</span>
+                                <span class="tech-badge">jQuery</span>
+                                <span class="tech-badge">React JS</span>
+                            </div>
+                            <p class="mb-3">This is a sleek, web-based quiz application built with React.js and modern frontend technologies. It offers a smooth, responsive interface for users to take quizzes online.</p>
+                            <div class="d-flex justify-content-between">
+                                <a href="https://github.com/sarthakjoshi20/quizapp" target="_blank" class="btn btn-primary btn-sm">View Code</a>
+                                <a href="https://sarthakjoshi20.github.io/quizapp/" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="elitekicks.jpg" class="project-img" alt="ELITEKICKS Ecommerce">
+                        <div class="project-body">
+                            <h5>ELITEKICKS</h5>
+                            <div class="mb-3">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">Bootstrap</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">AJAX</span>
+                                <span class="tech-badge">Node JS</span>
+                                <span class="tech-badge">Express JS</span>
+                                <span class="tech-badge">MySQL</span>
+                            </div>
+                            <p class="mb-3">EliteKicks is a modern ecommerce website built with Node.js, Express.js HTML, CSS and JavaScript. It offers a smooth and responsive shopping experience with features like product browsing.</p>
+                            <div class="d-flex justify-content-between">
+                                <a href="https://github.com/sarthakjoshi20/elitekicks" target="_blank" class="btn btn-primary btn-sm">View Code</a>
+                                <a href="https://github.com/sarthakjoshi20/elitekicks" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certificates Section -->
+    <section id="certificates" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">My Certificates</h2>
+            <div class="certificates-container">
+                <div class="certificates-track">
+                    <div class="certificate-card">
+                        <div class="certificate-img">
+                            <img src="html.jpg" alt="HTML Certificate">
+                        </div>
+                        <div class="certificate-body">
+                            <h5>HTML</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card">
+                        <div class="certificate-img">
+                            <img src="css.jpg" alt="CSS Certificate">
+                        </div>
+                        <div class="certificate-body">
+                            <h5>CSS</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card">
+                        <div class="certificate-img">
+                            <img src="boot.jpg" alt="Bootstrap Certificate">
+                        </div>
+                        <div class="certificate-body">
+                            <h5>Bootstrap</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card">
+                        <div class="certificate-img">
+                            <img src="javascript.jpg" alt="JavaScript Certificate">
+                        </div>
+                        <div class="certificate-body">
+                            <h5>JavaScript</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card">
+                        <div class="certificate-img">
+                            <img src="javasc4.jpeg" alt="JavaScript Certificate">
+                        </div>
+                        <div class="certificate-body">
+                            <h5>JavaScript</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card">
+                        <div class="certificate-img">
+                            <img src="jquery.jpg" alt="jQuery Certificate">
+                        </div>
+                        <div class="certificate-body">
+                            <h5>jQuery</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card">
+                        <div class="certificate-img">
+                            <img src="json.jpg" alt="JSON Certificate">
+                        </div>
+                        <div class="certificate-body">
+                            <h5>JSON</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card">
+                        <div class="certificate-img">
+                            <img src="reactJs.jpg" alt="React JS Certificate">
+                        </div>
+                        <div class="certificate-body">
+                            <h5>React JS</h5>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="certificate-img">
+                            <img src="node.jpg" alt="Node JS Certificate">
+                        </div>
+                        <div class="certificate-body">
+                            <h5>Node JS</h5>
+                        </div>
+                    </div>
+                    
+                    <!-- Duplicates for seamless looping -->
+                    <div class="certificate-card">
+                        <div class="certificate-img">
+                            <img src="html.jpg" alt="HTML Certificate">
+                        </div>
+                        <div class="certificate-body">
+                            <h5>HTML</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-card">
+                        <div class="certificate-img">
+                            <img src="css.jpg" alt="CSS Certificate">
+                        </div>
+                        <div class="certificate-body">
+                            <h5>CSS</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="contact-form">
+                        <form id="contact-form">
+                            <div class="mb-3">
+                                <input type="text" id="name" class="form-control" placeholder="Your Name" autocomplete="off" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" id="email" class="form-control" placeholder="Your Email" autocomplete="off" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" id="mobile" class="form-control" placeholder="Your Mobile Number" autocomplete="off" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea id="message" class="form-control" rows="2" placeholder="Your Message" autocomplete="off" required style="resize: none;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn1 w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Location</h5>
+                                <p>Hinjawadi Phase 1, Pimpri-Chinchwad, Maharashtra, India - 411057</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5>Phone</h5>
+                                <a href="tel:+919322231899" class="contact-link">+91 9322231899</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>Email</h5>
+                                <a href="mailto:sarthakjoshi1899@gmail.com" class="contact-link">sarthakjoshi1899@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <div class="social-icons mt-2">
+                                    <a href="https://www.linkedin.com/in/sarthak-joshi-55a204344" target="_blank" title="LinkedIn">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a href="https://github.com/sarthakjoshi20/" target="_blank" title="GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="mailto:sarthakjoshi1899@gmail.com" title="Email">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                    <a href="https://wa.me/9322231899" target="_blank" title="WhatsApp">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/_sarthak.joshi_" target="_blank" title="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sarthak Joshi. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("w1GIRFZeLv7HOX9Ig");
+        })();
+
+        // Contact form submission
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            emailjs.send("service_7swq03p", "template_8nx7ggm", {
+                from_name: document.getElementById("name").value,
+                from_email: document.getElementById("email").value,
+                from_mobile: document.getElementById("mobile").value,
+                message: document.getElementById("message").value
+            }).then(
+                function(response) {
+                    alert("Message sent successfully!");
+                    document.getElementById("contact-form").reset();
+                },
+                function(error) {
+                    alert("Failed to send message. Please try again.");
+                }
+            );
+        });
+
+        // Typewriter effect
+        const text = "Full Stack Developer || Web Developer";
+        let index = 0;
+        let isDeleting = false;
+        const typingSpeed = 150;
+        const erasingSpeed = 50;
+        const delayBetweenLoops = 200;
+        const element = document.getElementById("type-text");
+
+        function typeLoop() {
+            if (!isDeleting && index <= text.length) {
+                element.textContent = text.substring(0, index++);
+                setTimeout(typeLoop, typingSpeed);
+            } else if (isDeleting && index >= 0) {
+                element.textContent = text.substring(0, index--);
+                setTimeout(typeLoop, erasingSpeed);
+            } else {
+                isDeleting = !isDeleting;
+                setTimeout(typeLoop, delayBetweenLoops);
+            }
+        }
+
+        typeLoop();
+
+        // Scroll animations
+        document.addEventListener("DOMContentLoaded", function () {
+            let elements = document.querySelectorAll(".fade-in");
+            let observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            elements.forEach(element => observer.observe(element));
+        });
+
+        // Navbar scroll effect
+        window.addEventListener("scroll", function() {
+            const navbar = document.querySelector(".navbar");
+            if (window.scrollY > 50) {
+                navbar.style.padding = "0.5rem 0";
+                navbar.style.backgroundColor = "rgba(15, 15, 35, 0.98)";
+            } else {
+                navbar.style.padding = "0.8rem 0";
+                navbar.style.backgroundColor = "rgba(15, 15, 35, 0.95)";
+            }
+        });
+
+        // Smooth scrolling for navbar links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close mobile navbar when clicking a link
+        document.addEventListener("DOMContentLoaded", function () {
+            let navLinks = document.querySelectorAll(".navbar-nav a");
+            let navCollapse = document.querySelector(".navbar-collapse");
+
+            navLinks.forEach(function (link) {
+                link.addEventListener("click", function () {
+                    if (navCollapse.classList.contains("show")) {
+                        new bootstrap.Collapse(navCollapse).toggle();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
