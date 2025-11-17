@@ -789,9 +789,78 @@
                 padding: 8px 0;
             }
         }
+
+        /* Opening Loader Background */
+        #opening-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 999999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        /* Loading Bars (YouTube style) */
+        .loader-container {
+            display: flex;
+            gap: 8px;
+        }
+
+        .loader-bar {
+            width: 8px;
+            height: 40px;
+            background: #ff0033;
+            border-radius: 4px;
+            animation: bounce 0.6s infinite alternate;
+        }
+
+        .loader-bar:nth-child(2) {
+            animation-delay: 0.2s;
+            background: #ffcc00;
+        }
+
+        .loader-bar:nth-child(3) {
+            animation-delay: 0.4s;
+            background: #00e676;
+        }
+
+        @keyframes bounce {
+            0% { height: 15px; opacity: 0.5; }
+            100% { height: 40px; opacity: 1; }
+        }
+
+        /* Loading text */
+        .loading-text {
+            margin-top: 15px;
+            color: #fff;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        /* Fade out animation */
+        .hide-loader {
+            opacity: 0;
+            visibility: hidden;
+        }
     </style>
 </head>
 <body>
+    <!-- Opening Loading Animation -->
+    <div id="opening-loader">
+        <div class="loader-container">
+            <div class="loader-bar"></div>
+            <div class="loader-bar"></div>
+            <div class="loader-bar"></div>
+        </div>
+        <p class="loading-text">Loading Portfolio...</p>
+    </div>
+    
     <!-- Nebulae Background -->
     <div class="nebulae-bg"></div>
     
@@ -1546,66 +1615,13 @@
             });
         });
     </script>
+    <script>
+        // Hide loader after page fully loads
+        window.addEventListener("load", function () {
+            setTimeout(() => {
+                document.getElementById("opening-loader").classList.add("hide-loader");
+            }, 1000); // delay for smooth animation
+        });
+    </script>
 </body>
 </html>
-
-
-<div id="yt-loader">
-    <div class="yt-thumbnail shimmer"></div>
-
-    <div class="yt-content">
-        <div class="yt-line shimmer"></div>
-        <div class="yt-line short shimmer"></div>
-    </div>
-</div>
-
-<style>
-/* Skeleton Shimmer Background */
-.shimmer {
-    background: #e2e2e2;
-    background-image: linear-gradient(
-        90deg,
-        #e2e2e2 0px,
-        #f5f5f5 40px,
-        #e2e2e2 80px
-    );
-    background-size: 600px 100%;
-    animation: shimmer 1.3s infinite linear;
-}
-
-/* Shimmer animation */
-@keyframes shimmer {
-    0% { background-position: -600px 0; }
-    100% { background-position: 600px 0; }
-}
-
-/* YouTube-like thumbnail */
-.yt-thumbnail {
-    width: 100%;
-    height: 220px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-/* Content lines */
-.yt-content {
-    width: 100%;
-}
-
-.yt-line {
-    height: 16px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.yt-line.short {
-    width: 55%;
-}
-</style>
-
-<script>
-window.onload = () => {
-    const loader = document.getElementById("yt-loader");
-    loader.style.display = "none"; // Hide skeleton
-};
-</script>
