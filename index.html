@@ -848,6 +848,9 @@
             opacity: 0;
             visibility: hidden;
         }
+        .main-content {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -861,655 +864,657 @@
         <p class="loading-text">Loading Portfolio...</p>
     </div>
     
-    <!-- Nebulae Background -->
-    <div class="nebulae-bg"></div>
-    
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="favicontitle.png" alt="Logo">
-                Sarthak Joshi
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-    <!-- Star Animation -->
-    <div class="stars-background">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-    </div>
-    
-    <!-- Floating Particles -->
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-    
-    <div class="container">
-        <div class="hero-content fade-in">
-            <h1>Sarthak Joshi</h1>
-            <p class="typewriter">
-                <span id="type-text"></span><span class="cursor"></span>
-            </p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/sarthak-joshi-55a204344" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
+    <div class="main-content">
+        <!-- Nebulae Background -->
+        <div class="nebulae-bg"></div>
+        
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="favicontitle.png" alt="Logo">
+                    Sarthak Joshi
                 </a>
-                <a href="https://github.com/sarthakjoshi20/" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:sarthakjoshi1899@gmail.com" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://wa.me/9322231899" target="_blank" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.instagram.com/_sarthak.joshi_" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-    
-    <!-- About Section -->
-    <section id="about" class="fade-in mb-4">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="row align-items-center">
-                <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <img src="jhighfh.png" alt="Sarthak Joshi" class="about-img">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
                 </div>
-                <div class="col-md-8">
-                    <div class="about-content">
-                        <p class="about-text hhh">
-                            I'm Sarthak Joshi, a full-stack web developer with a strong passion for creating responsive, user-friendly, and high-performance web applications. I work with modern front-end technologies like HTML, CSS, Bootstrap, JavaScript, jQuery, and React.js, alongside back-end tools like Node.js, Express.js, and MySQL.
-                        </p>
-                        <p class="about-text">
-                            I enjoy building clean, interactive interfaces and developing robust APIs that ensure smooth functionality across devices. With a focus on performance, usability, and clean code, I aim to deliver scalable web solutions that solve real-world problems. I'm always exploring new technologies and refining my skills to stay current in the fast-paced world of web development.
-                        </p>
-                        <a href="#contact" class="btn btn-primary me-2">Contact Me</a>
-                        <a href="Sarthak Joshi2.pdf" target="_blank" class="btn btn-outline-primary text-white btn-sm">Download CV</a>
-                    </div>
+            </div>
+        </nav>
+        
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+        <!-- Star Animation -->
+        <div class="stars-background">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+        
+        <!-- Floating Particles -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Sarthak Joshi</h1>
+                <p class="typewriter">
+                    <span id="type-text"></span><span class="cursor"></span>
+                </p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/sarthak-joshi-55a204344" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/sarthakjoshi20/" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:sarthakjoshi1899@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://wa.me/9322231899" target="_blank" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/_sarthak.joshi_" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Education Section -->
-    <section id="education" class="fade-in">
-        <div class="container">
-            <h2 class="section-title">My Education</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="education-card">
-                        <div class="education-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h4>Bachelor's Degree</h4>
-                        <div class="education-details">
-                            <p><strong>Savitribai Phule Pune University</strong></p>
-                            <p>B.B.A.(Computer Application)</p>
-                            <p>Year: 2022 - 2025</p>
-                            <p>CGPA: 8.19 &nbsp; Grade: +A</p>
-                        </div>
+        
+        <!-- About Section -->
+        <section id="about" class="fade-in mb-4">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center mb-4 mb-md-0">
+                        <img src="jhighfh.png" alt="Sarthak Joshi" class="about-img">
                     </div>
-                </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="education-card">
-                        <div class="education-icon">
-                            <i class="fas fa-school"></i>
-                        </div>
-                        <h4>Higher Secondary</h4>
-                        <div class="education-details">
-                            <p><strong>Maharashtra State Board Pune</strong></p>
-                            <p>Stream: Commerce</p>
-                            <p>Year: March 2022</p>
-                            <p>Percentage: 60.17%</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="education-card">
-                        <div class="education-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <h4>Secondary School</h4>
-                        <div class="education-details">
-                            <p><strong>Maharashtra State Board Pune</strong></p>
-                            <p>Year: March 2020</p>
-                            <p>Percentage: 89%</p>
+                    <div class="col-md-8">
+                        <div class="about-content">
+                            <p class="about-text hhh">
+                                I'm Sarthak Joshi, a full-stack web developer with a strong passion for creating responsive, user-friendly, and high-performance web applications. I work with modern front-end technologies like HTML, CSS, Bootstrap, JavaScript, jQuery, and React.js, alongside back-end tools like Node.js, Express.js, and MySQL.
+                            </p>
+                            <p class="about-text">
+                                I enjoy building clean, interactive interfaces and developing robust APIs that ensure smooth functionality across devices. With a focus on performance, usability, and clean code, I aim to deliver scalable web solutions that solve real-world problems. I'm always exploring new technologies and refining my skills to stay current in the fast-paced world of web development.
+                            </p>
+                            <a href="#contact" class="btn btn-primary me-2">Contact Me</a>
+                            <a href="Sarthak Joshi2.pdf" target="_blank" class="btn btn-outline-primary text-white btn-sm">Download CV</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Skills Section -->
-    <section id="skills" class="fade-in">
-        <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <div class="row g-4">
-                <div class="col-6 col-md-3">
-                    <div class="skill-item">
-                        <div class="skill-icon text-danger">
-                            <i class="fab fa-html5"></i>
-                        </div>
-                        <h5>HTML5</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 95%"></div>
-                        </div>
-                        <small>95%</small>
-                    </div>
-                </div>
-                
-                <div class="col-6 col-md-3">
-                    <div class="skill-item">
-                        <div class="skill-icon text-primary">
-                            <i class="fab fa-css3-alt"></i>
-                        </div>
-                        <h5>CSS3</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
-                        </div>
-                        <small>90%</small>
-                    </div>
-                </div>
-                
-                <div class="col-6 col-md-3">
-                    <div class="skill-item">
-                        <div class="skill-icon text-warning">
-                            <i class="fab fa-js-square"></i>
-                        </div>
-                        <h5>JavaScript</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 85%"></div>
-                        </div>
-                        <small>85%</small>
-                    </div>
-                </div>
-                
-                <div class="col-6 col-md-3">
-                    <div class="skill-item">
-                        <div class="skill-icon" style="color: #6f42c1;">
-                            <i class="fab fa-bootstrap"></i>
-                        </div>
-                        <h5>Bootstrap</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 95%; background-color: #6f42c1;"></div>
-                        </div>
-                        <small>95%</small>
-                    </div>
-                </div>
-                
-                <div class="col-6 col-md-3">
-                    <div class="skill-item">
-                        <div class="skill-icon text-info">
-                            <i class="fab fa-react"></i>
-                        </div>
-                        <h5>React.js</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 70%"></div>
-                        </div>
-                        <small>70%</small>
-                    </div>
-                </div>
-                
-                <div class="col-6 col-md-3">
-                    <div class="skill-item">
-                        <div class="skill-icon text-success">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h5>JSON</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 80%"></div>
-                        </div>
-                        <small>80%</small>
-                    </div>
-                </div>
-                
-                <div class="col-6 col-md-3">
-                    <div class="skill-item">
-                        <div class="skill-icon" style="color: #0769AD;">
-                            <i class="fas fa-file-code"></i>
-                        </div>
-                        <h5>jQuery</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 85%; background-color: #0769AD;"></div>
-                        </div>
-                        <small>85%</small>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="skill-item">
-                        <div class="skill-icon" style="color: #a60ccc;">
-                            <i class="fas fa-cloud-arrow-up"></i>
-                        </div>
-                        <h5>AJAX</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 75%; background-color: #a60ccc;"></div>
-                        </div>
-                        <small>75%</small>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="skill-item">
-                        <div class="skill-icon" style="color: #07ad70;">
-                            <i class="fab fa-node-js"></i>
-                        </div>
-                        <h5>Node JS</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 80%; background-color: #07ad70;"></div>
-                        </div>
-                        <small>80%</small>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="skill-item">
-                        <div class="skill-icon" style="color: #ff4231;">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h5>Express JS</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 85%; background-color: #ff4231;"></div>
-                        </div>
-                        <small>85%</small>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="skill-item">
-                        <div class="skill-icon" style="color: #5b37f9;">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h5>MySQL</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 90%; background-color: #5b37f9;"></div>
-                        </div>
-                        <small>90%</small>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <div class="skill-item">
-                        <div class="skill-icon" style="color: #217346;">
-                            <i class="fas fa-file-excel"></i>
-                        </div>
-                        <h5>Advanced Excel</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 85%; background-color: #217346;"></div>
-                        </div>
-                        <small>85%</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Projects Section - Updated -->
-    <section id="projects" class="fade-in mt-3">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="project-card1">
-                        <div class="project-body">
-                            <h5>AGRO WEBSITE</h5>
-                            <div class="mb-3">
-                                <span class="tech-badge">HTML5</span>
-                                <span class="tech-badge">CSS3</span>
-                                <span class="tech-badge">Bootstrap</span>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">My Education</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="education-card">
+                            <div class="education-icon">
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <p class="mb-3">The AGRO website features a clean, responsive layout to showcase agricultural themes and content. It includes sections like Home, About, Gallery, Blog, and Contact, each styled for visual consistency.</p>
-                            <div class="d-flex justify-content-between">
-                                <a href="https://github.com/sarthakjoshi20/agro" target="_blank" class="btn btn-primary btn-sm">View Code</a>
-                                <a href="https://sarthakjoshi20.github.io/agro/" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
+                            <h4>Bachelor's Degree</h4>
+                            <div class="education-details">
+                                <p><strong>Savitribai Phule Pune University</strong></p>
+                                <p>B.B.A.(Computer Application)</p>
+                                <p>Year: 2022 - 2025</p>
+                                <p>CGPA: 8.19 &nbsp; Grade: +A</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="project-card2">
-                        <div class="project-body">
-                            <h5>SJ CONTRACTS</h5>
-                            <div class="mb-3">
-                                <span class="tech-badge">HTML5</span>
-                                <span class="tech-badge">CSS3</span>
-                                <span class="tech-badge">Bootstrap</span>
-                            </div>
-                            <p class="mb-3">SJ Contracts is a responsive website built using HTML, CSS, and Bootstrap. It includes sections like Home, About, Portfolio, and Contact. The design is clean and easy to navigate.</p>
-                            <div class="d-flex justify-content-between">
-                                <a href="https://github.com/sarthakjoshi20/sjconstruction" target="_blank" class="btn btn-primary btn-sm">View Code</a>
-                                <a href="https://sarthakjoshi20.github.io/sjconstruction/" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="project-card3">
-                        <div class="project-body">
-                            <h5>BILLING SOFTWARE</h5>
-                            <div class="mb-2">
-                                <span class="tech-badge">HTML5</span>
-                                <span class="tech-badge">CSS3</span>
-                                <span class="tech-badge">Bootstrap</span>
-                                <span class="tech-badge">JavaScript</span>
-                                <span class="tech-badge">jQuery</span>
-                            </div>
-                            <p class="mb-3">This Billing Software features a clean, user‑friendly interface for managing customer and invoice details. Users can input customer info, add multiple products with tax, discounts, and quantities.</p>
-                            <div class="d-flex justify-content-between">
-                                <a href="https://github.com/sarthakjoshi20/billingsoftware" target="_blank" class="btn btn-primary btn-sm">View Code</a>
-                                <a href="https://sarthakjoshi20.github.io/billingsoftware/" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="project-card4">
-                        <div class="project-body">
-                            <h5>QUIZ APPLICATION</h5>
-                            <div class="mb-3">
-                                <span class="tech-badge">HTML5</span>
-                                <span class="tech-badge">CSS3</span>
-                                <span class="tech-badge">Bootstrap</span>
-                                <span class="tech-badge">JavaScript</span>
-                                <span class="tech-badge">JSON</span>
-                                <span class="tech-badge">jQuery</span>
-                                <span class="tech-badge">React JS</span>
-                            </div>
-                            <p class="mb-3">Quiz Application is a modern, web-based platform built with React.js for taking quizzes online. It features a clean, responsive UI and smooth performance across all devices.</p>
-                            <div class="d-flex justify-content-between">
-                                <a href="https://github.com/sarthakjoshi20/quizapp" target="_blank" class="btn btn-primary btn-sm">View Code</a>
-                                <a href="https://sarthakjoshi20.github.io/quizapp/" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="project-card5">
-                        <div class="project-body">
-                            <h5>ELITEKICKS</h5>
-                            <div class="mb-3">
-                                <span class="tech-badge">HTML5</span>
-                                <span class="tech-badge">CSS3</span>
-                                <span class="tech-badge">Bootstrap</span>
-                                <span class="tech-badge">JavaScript</span>
-                                <span class="tech-badge">AJAX</span>
-                                <span class="tech-badge">Node JS</span>
-                                <span class="tech-badge">Express JS</span>
-                                <span class="tech-badge">MySQL</span>
-                            </div>
-                            <p class="mb-3">EliteKicks is a modern ecommerce website built with Node.js, Express.js HTML, CSS and JavaScript. It offers a smooth and responsive shopping experience with features like product browsing.</p>
-                            <div class="d-flex justify-content-between">
-                                <a href="https://github.com/sarthakjoshi20/elitekicks" target="_blank" class="btn btn-primary btn-sm">View Code</a>
-                                <a href="https://github.com/sarthakjoshi20/elitekicks" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Certificates Section -->
-    <section id="certificates" class="fade-in">
-        <div class="container">
-            <h2 class="section-title">My Certificates</h2>
-            <div class="certificates-container">
-                <div class="certificates-track">
-                    <div class="certificate-card">
-                        <div class="certificate-img">
-                            <img src="fullstack.jpeg" alt="Full Stack Development Certificate">
-                        </div>
-                        <div class="certificate-body">
-                            <h5>Full Stack Development</h5>
-                        </div>
-                    </div>
-                    <div class="certificate-card">
-                        <div class="certificate-img">
-                            <img src="html.jpg" alt="HTML Certificate">
-                        </div>
-                        <div class="certificate-body">
-                            <h5>HTML</h5>
                         </div>
                     </div>
                     
-                    <div class="certificate-card">
-                        <div class="certificate-img">
-                            <img src="css.jpg" alt="CSS Certificate">
-                        </div>
-                        <div class="certificate-body">
-                            <h5>CSS</h5>
+                    <div class="col-md-4 mb-4">
+                        <div class="education-card">
+                            <div class="education-icon">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <h4>Higher Secondary</h4>
+                            <div class="education-details">
+                                <p><strong>Maharashtra State Board Pune</strong></p>
+                                <p>Stream: Commerce</p>
+                                <p>Year: March 2022</p>
+                                <p>Percentage: 60.17%</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="certificate-card">
-                        <div class="certificate-img">
-                            <img src="boot.jpg" alt="Bootstrap Certificate">
+                    <div class="col-md-4 mb-4">
+                        <div class="education-card">
+                            <div class="education-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4>Secondary School</h4>
+                            <div class="education-details">
+                                <p><strong>Maharashtra State Board Pune</strong></p>
+                                <p>Year: March 2020</p>
+                                <p>Percentage: 89%</p>
+                            </div>
                         </div>
-                        <div class="certificate-body">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">My Skills</h2>
+                <div class="row g-4">
+                    <div class="col-6 col-md-3">
+                        <div class="skill-item">
+                            <div class="skill-icon text-danger">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <h5>HTML5</h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 95%"></div>
+                            </div>
+                            <small>95%</small>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6 col-md-3">
+                        <div class="skill-item">
+                            <div class="skill-icon text-primary">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <h5>CSS3</h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                            </div>
+                            <small>90%</small>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6 col-md-3">
+                        <div class="skill-item">
+                            <div class="skill-icon text-warning">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                            <h5>JavaScript</h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 85%"></div>
+                            </div>
+                            <small>85%</small>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6 col-md-3">
+                        <div class="skill-item">
+                            <div class="skill-icon" style="color: #6f42c1;">
+                                <i class="fab fa-bootstrap"></i>
+                            </div>
                             <h5>Bootstrap</h5>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 95%; background-color: #6f42c1;"></div>
+                            </div>
+                            <small>95%</small>
                         </div>
                     </div>
                     
-                    <div class="certificate-card">
-                        <div class="certificate-img">
-                            <img src="javascript.jpg" alt="JavaScript Certificate">
-                        </div>
-                        <div class="certificate-body">
-                            <h5>JavaScript</h5>
-                        </div>
-                    </div>
-                    
-                    <div class="certificate-card">
-                        <div class="certificate-img">
-                            <img src="javasc4.jpeg" alt="JavaScript Certificate">
-                        </div>
-                        <div class="certificate-body">
-                            <h5>JavaScript</h5>
+                    <div class="col-6 col-md-3">
+                        <div class="skill-item">
+                            <div class="skill-icon text-info">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <h5>React.js</h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 70%"></div>
+                            </div>
+                            <small>70%</small>
                         </div>
                     </div>
                     
-                    <div class="certificate-card">
-                        <div class="certificate-img">
-                            <img src="jquery.jpg" alt="jQuery Certificate">
-                        </div>
-                        <div class="certificate-body">
-                            <h5>jQuery</h5>
-                        </div>
-                    </div>
-                    
-                    <div class="certificate-card">
-                        <div class="certificate-img">
-                            <img src="json.jpg" alt="JSON Certificate">
-                        </div>
-                        <div class="certificate-body">
+                    <div class="col-6 col-md-3">
+                        <div class="skill-item">
+                            <div class="skill-icon text-success">
+                                <i class="fas fa-code"></i>
+                            </div>
                             <h5>JSON</h5>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 80%"></div>
+                            </div>
+                            <small>80%</small>
                         </div>
                     </div>
                     
-                    <div class="certificate-card">
-                        <div class="certificate-img">
-                            <img src="reactJs.jpg" alt="React JS Certificate">
-                        </div>
-                        <div class="certificate-body">
-                            <h5>React JS</h5>
+                    <div class="col-6 col-md-3">
+                        <div class="skill-item">
+                            <div class="skill-icon" style="color: #0769AD;">
+                                <i class="fas fa-file-code"></i>
+                            </div>
+                            <h5>jQuery</h5>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%; background-color: #0769AD;"></div>
+                            </div>
+                            <small>85%</small>
                         </div>
                     </div>
 
-                    <div class="certificate-card">
-                        <div class="certificate-img">
-                            <img src="node.jpg" alt="Node JS Certificate">
+                    <div class="col-6 col-md-3">
+                        <div class="skill-item">
+                            <div class="skill-icon" style="color: #a60ccc;">
+                                <i class="fas fa-cloud-arrow-up"></i>
+                            </div>
+                            <h5>AJAX</h5>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%; background-color: #a60ccc;"></div>
+                            </div>
+                            <small>75%</small>
                         </div>
-                        <div class="certificate-body">
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <div class="skill-item">
+                            <div class="skill-icon" style="color: #07ad70;">
+                                <i class="fab fa-node-js"></i>
+                            </div>
                             <h5>Node JS</h5>
-                        </div>
-                    </div>
-                    
-                    <!-- Duplicates for seamless looping -->
-                     <div class="certificate-card">
-                        <div class="certificate-img">
-                            <img src="fullstack.jpeg" alt="Full Stack Development Certificate">
-                        </div>
-                        <div class="certificate-body">
-                            <h5>Full Stack Development</h5>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%; background-color: #07ad70;"></div>
+                            </div>
+                            <small>80%</small>
                         </div>
                     </div>
 
-                    <div class="certificate-card">
-                        <div class="certificate-img">
-                            <img src="html.jpg" alt="HTML Certificate">
+                    <div class="col-6 col-md-3">
+                        <div class="skill-item">
+                            <div class="skill-icon" style="color: #ff4231;">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h5>Express JS</h5>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%; background-color: #ff4231;"></div>
+                            </div>
+                            <small>85%</small>
                         </div>
-                        <div class="certificate-body">
-                            <h5>HTML</h5>
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <div class="skill-item">
+                            <div class="skill-icon" style="color: #5b37f9;">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h5>MySQL</h5>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%; background-color: #5b37f9;"></div>
+                            </div>
+                            <small>90%</small>
                         </div>
-                    </div> 
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <div class="skill-item">
+                            <div class="skill-icon" style="color: #217346;">
+                                <i class="fas fa-file-excel"></i>
+                            </div>
+                            <h5>Advanced Excel</h5>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%; background-color: #217346;"></div>
+                            </div>
+                            <small>85%</small>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="fade-in">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4 mb-md-0">
-                    <div class="contact-form">
-                        <form id="contact-form">
-                            <div class="mb-3">
-                                <input type="text" id="name" class="form-control" placeholder="Your Name" autocomplete="off" required>
+        </section>
+        
+        <!-- Projects Section - Updated -->
+        <section id="projects" class="fade-in mt-3">
+            <div class="container">
+                <h2 class="section-title">My Projects</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card1">
+                            <div class="project-body">
+                                <h5>AGRO WEBSITE</h5>
+                                <div class="mb-3">
+                                    <span class="tech-badge">HTML5</span>
+                                    <span class="tech-badge">CSS3</span>
+                                    <span class="tech-badge">Bootstrap</span>
+                                </div>
+                                <p class="mb-3">The AGRO website features a clean, responsive layout to showcase agricultural themes and content. It includes sections like Home, About, Gallery, Blog, and Contact, each styled for visual consistency.</p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="https://github.com/sarthakjoshi20/agro" target="_blank" class="btn btn-primary btn-sm">View Code</a>
+                                    <a href="https://sarthakjoshi20.github.io/agro/" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <input type="email" id="email" class="form-control" placeholder="Your Email" autocomplete="off" required>
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" id="mobile" class="form-control" placeholder="Your Mobile Number" autocomplete="off" required>
-                            </div>
-                            <div class="mb-3">
-                                <textarea id="message" class="form-control" rows="2" placeholder="Your Message" autocomplete="off" required style="resize: none;"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn1 w-100">Send Message</button>
-                        </form>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h5>Location</h5>
-                                <p>Hinjawadi Phase 1, Pimpri-Chinchwad, Maharashtra, India - 411057</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h5>Phone</h5>
-                                <a href="tel:+919322231899" class="contact-link">+91 9322231899</a>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card2">
+                            <div class="project-body">
+                                <h5>SJ CONTRACTS</h5>
+                                <div class="mb-3">
+                                    <span class="tech-badge">HTML5</span>
+                                    <span class="tech-badge">CSS3</span>
+                                    <span class="tech-badge">Bootstrap</span>
+                                </div>
+                                <p class="mb-3">SJ Contracts is a responsive website built using HTML, CSS, and Bootstrap. It includes sections like Home, About, Portfolio, and Contact. The design is clean and easy to navigate.</p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="https://github.com/sarthakjoshi20/sjconstruction" target="_blank" class="btn btn-primary btn-sm">View Code</a>
+                                    <a href="https://sarthakjoshi20.github.io/sjconstruction/" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h5>Email</h5>
-                                <a href="mailto:sarthakjoshi1899@gmail.com" class="contact-link">sarthakjoshi1899@gmail.com</a>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card3">
+                            <div class="project-body">
+                                <h5>BILLING SOFTWARE</h5>
+                                <div class="mb-2">
+                                    <span class="tech-badge">HTML5</span>
+                                    <span class="tech-badge">CSS3</span>
+                                    <span class="tech-badge">Bootstrap</span>
+                                    <span class="tech-badge">JavaScript</span>
+                                    <span class="tech-badge">jQuery</span>
+                                </div>
+                                <p class="mb-3">This Billing Software features a clean, user‑friendly interface for managing customer and invoice details. Users can input customer info, add multiple products with tax, discounts, and quantities.</p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="https://github.com/sarthakjoshi20/billingsoftware" target="_blank" class="btn btn-primary btn-sm">View Code</a>
+                                    <a href="https://sarthakjoshi20.github.io/billingsoftware/" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <div class="social-icons mt-2">
-                                    <a href="https://www.linkedin.com/in/sarthak-joshi-55a204344" target="_blank" title="LinkedIn">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-                                    <a href="https://github.com/sarthakjoshi20/" target="_blank" title="GitHub">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="mailto:sarthakjoshi1899@gmail.com" title="Email">
-                                        <i class="fas fa-envelope"></i>
-                                    </a>
-                                    <a href="https://wa.me/9322231899" target="_blank" title="WhatsApp">
-                                        <i class="fab fa-whatsapp"></i>
-                                    </a>
-                                    <a href="https://www.instagram.com/_sarthak.joshi_" target="_blank" title="Instagram">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card4">
+                            <div class="project-body">
+                                <h5>QUIZ APPLICATION</h5>
+                                <div class="mb-3">
+                                    <span class="tech-badge">HTML5</span>
+                                    <span class="tech-badge">CSS3</span>
+                                    <span class="tech-badge">Bootstrap</span>
+                                    <span class="tech-badge">JavaScript</span>
+                                    <span class="tech-badge">JSON</span>
+                                    <span class="tech-badge">jQuery</span>
+                                    <span class="tech-badge">React JS</span>
+                                </div>
+                                <p class="mb-3">Quiz Application is a modern, web-based platform built with React.js for taking quizzes online. It features a clean, responsive UI and smooth performance across all devices.</p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="https://github.com/sarthakjoshi20/quizapp" target="_blank" class="btn btn-primary btn-sm">View Code</a>
+                                    <a href="https://sarthakjoshi20.github.io/quizapp/" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="project-card5">
+                            <div class="project-body">
+                                <h5>ELITEKICKS</h5>
+                                <div class="mb-3">
+                                    <span class="tech-badge">HTML5</span>
+                                    <span class="tech-badge">CSS3</span>
+                                    <span class="tech-badge">Bootstrap</span>
+                                    <span class="tech-badge">JavaScript</span>
+                                    <span class="tech-badge">AJAX</span>
+                                    <span class="tech-badge">Node JS</span>
+                                    <span class="tech-badge">Express JS</span>
+                                    <span class="tech-badge">MySQL</span>
+                                </div>
+                                <p class="mb-3">EliteKicks is a modern ecommerce website built with Node.js, Express.js HTML, CSS and JavaScript. It offers a smooth and responsive shopping experience with features like product browsing.</p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="https://github.com/sarthakjoshi20/elitekicks" target="_blank" class="btn btn-primary btn-sm">View Code</a>
+                                    <a href="https://github.com/sarthakjoshi20/elitekicks" target="_blank" class="btn btn-outline-primary text-white btn-sm">Visit Website</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Sarthak Joshi. All rights reserved.</p>
-        </div>
-    </footer>
+        </section>
+        
+        <!-- Certificates Section -->
+        <section id="certificates" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">My Certificates</h2>
+                <div class="certificates-container">
+                    <div class="certificates-track">
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="fullstack.jpeg" alt="Full Stack Development Certificate">
+                            </div>
+                            <div class="certificate-body">
+                                <h5>Full Stack Development</h5>
+                            </div>
+                        </div>
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="html.jpg" alt="HTML Certificate">
+                            </div>
+                            <div class="certificate-body">
+                                <h5>HTML</h5>
+                            </div>
+                        </div>
+                        
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="css.jpg" alt="CSS Certificate">
+                            </div>
+                            <div class="certificate-body">
+                                <h5>CSS</h5>
+                            </div>
+                        </div>
+                        
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="boot.jpg" alt="Bootstrap Certificate">
+                            </div>
+                            <div class="certificate-body">
+                                <h5>Bootstrap</h5>
+                            </div>
+                        </div>
+                        
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="javascript.jpg" alt="JavaScript Certificate">
+                            </div>
+                            <div class="certificate-body">
+                                <h5>JavaScript</h5>
+                            </div>
+                        </div>
+                        
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="javasc4.jpeg" alt="JavaScript Certificate">
+                            </div>
+                            <div class="certificate-body">
+                                <h5>JavaScript</h5>
+                            </div>
+                        </div>
+                        
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="jquery.jpg" alt="jQuery Certificate">
+                            </div>
+                            <div class="certificate-body">
+                                <h5>jQuery</h5>
+                            </div>
+                        </div>
+                        
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="json.jpg" alt="JSON Certificate">
+                            </div>
+                            <div class="certificate-body">
+                                <h5>JSON</h5>
+                            </div>
+                        </div>
+                        
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="reactJs.jpg" alt="React JS Certificate">
+                            </div>
+                            <div class="certificate-body">
+                                <h5>React JS</h5>
+                            </div>
+                        </div>
+
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="node.jpg" alt="Node JS Certificate">
+                            </div>
+                            <div class="certificate-body">
+                                <h5>Node JS</h5>
+                            </div>
+                        </div>
+                        
+                        <!-- Duplicates for seamless looping -->
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="fullstack.jpeg" alt="Full Stack Development Certificate">
+                            </div>
+                            <div class="certificate-body">
+                                <h5>Full Stack Development</h5>
+                            </div>
+                        </div>
+
+                        <div class="certificate-card">
+                            <div class="certificate-img">
+                                <img src="html.jpg" alt="HTML Certificate">
+                            </div>
+                            <div class="certificate-body">
+                                <h5>HTML</h5>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="fade-in">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <div class="contact-form">
+                            <form id="contact-form">
+                                <div class="mb-3">
+                                    <input type="text" id="name" class="form-control" placeholder="Your Name" autocomplete="off" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" id="email" class="form-control" placeholder="Your Email" autocomplete="off" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" id="mobile" class="form-control" placeholder="Your Mobile Number" autocomplete="off" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea id="message" class="form-control" rows="2" placeholder="Your Message" autocomplete="off" required style="resize: none;"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn1 w-100">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h5>Location</h5>
+                                    <p>Hinjawadi Phase 1, Pimpri-Chinchwad, Maharashtra, India - 411057</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h5>Phone</h5>
+                                    <a href="tel:+919322231899" class="contact-link">+91 9322231899</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5>Email</h5>
+                                    <a href="mailto:sarthakjoshi1899@gmail.com" class="contact-link">sarthakjoshi1899@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <div class="social-icons mt-2">
+                                        <a href="https://www.linkedin.com/in/sarthak-joshi-55a204344" target="_blank" title="LinkedIn">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                        <a href="https://github.com/sarthakjoshi20/" target="_blank" title="GitHub">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                        <a href="mailto:sarthakjoshi1899@gmail.com" title="Email">
+                                            <i class="fas fa-envelope"></i>
+                                        </a>
+                                        <a href="https://wa.me/9322231899" target="_blank" title="WhatsApp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/_sarthak.joshi_" target="_blank" title="Instagram">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 Sarthak Joshi. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
     
     <script>
         // Initialize EmailJS
@@ -1616,11 +1621,32 @@
         });
     </script>
     <script>
-        // Hide loader after page fully loads
-        window.addEventListener("load", function () {
+        document.addEventListener("DOMContentLoaded", function () {
+            const loader = document.getElementById("opening-loader");
+            const mainContent = document.querySelector(".main-content");
+
+            // Check if loader has already run
+            if (sessionStorage.getItem("loaderShown") === "true") {
+                loader.style.display = "none";      // hide loader
+                mainContent.style.display = "block"; // show content
+                return;
+            }
+
+            // First time visit → show loader
+            mainContent.style.display = "none";
+
             setTimeout(() => {
-                document.getElementById("opening-loader").classList.add("hide-loader");
-            }, 1000); // delay for smooth animation
+                loader.classList.add("hide-loader");
+
+                setTimeout(() => {
+                    loader.style.display = "none";
+                    mainContent.style.display = "block";
+
+                    // Store that loader has already been shown
+                    sessionStorage.setItem("loaderShown", "true");
+                }, 600);
+
+            }, 3000); // Loader visible for 2 seconds
         });
     </script>
 </body>
